@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTE Alliance – Soft Technology</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js for graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="BTE Alliance Symbol" class="logo">
+    <h1>BTE Alliance</h1>
+    <p>Life – Technology – Earth</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="system.html">The System</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="soft-technology.html">Soft Technology</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>A New Direction for Civilization</h2>
+    <p>Aligning Life, Technology, and Earth for a stable future</p>
+
+    <div class="hero-buttons">
+        <button onclick="window.location.href='research.html'">
+            Explore
+        </button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- 🌍 LIVE CO2 PANEL -->
+<!-- ========================= -->
+
+<section class="live-data">
+    <h2>Global CO₂ Monitoring</h2>
+
+    <div class="co2-display">
+        <h3>Current CO₂ Level</h3>
+        <div id="co2-value">Loading...</div>
+        <p id="timestamp"></p>
+    </div>
+
+    <canvas id="co2Chart"></canvas>
+</section>
+
+<!-- ========================= -->
+<!-- EXISTING CONTENT -->
+<!-- ========================= -->
+
+<section id="diagram" class="diagram-section">
+
+<p class="diagram-instruction">
+    Explore the system: click on each circle to learn more.
+</p>
+
+<div class="diagram-frame">
+    <div class="diagram-container">
+        <img src="threepillars.png" class="diagram-image">
+
+        <a href="biology.html" class="zone biology"></a>
+        <a href="technology.html" class="zone technology"></a>
+        <a href="earth.html" class="zone earth"></a>
+
+        <div class="zone bio-tech"></div>
+        <div class="zone tech-earth"></div>
+        <div class="zone bio-earth"></div>
+        <div class="zone all-three"></div>
+    </div>
+</div>
+
+</section>
+
+<section class="cta">
+    <h2>Be Part of the Evolution</h2>
+    <p>Learn. Share. Build.</p>
+</section>
+
+<footer>
+    <p>Life – Technology – Earth</p>
+</footer>
+
+<!-- ========================= -->
+<!-- 🌍 SCRIPT -->
+<!-- ========================= -->
+
+<script>
+async function loadCO2() {
+    try {
+        const response = await fetch("https://api.co2.earth/co2/latest");
+        const data = await response.json();
+
+        document.getElementById("co2-value").innerText =
+            data.co2.toFixed(2) + " ppm";
+
+        document.getElementById("timestamp").innerText =
+            "Updated: " + new Date().toLocaleString();
+
+    } catch (e) {
+        document.getElementById("co2-value").innerText = "Unavailable";
+    }
+}
+
+// Simple 30-year trend (demo curve – replace later with NOAA dataset)
+function loadChart() {
+    const ctx = document.getElementById("co2Chart");
+
+    const labels = [];
+    const values = [];
+
+    for (let i = 1995; i <= 2025; i++) {
+        labels.push(i);
+        values.push(360 + (i - 1995) * 2.1);
+    }
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "CO₂ ppm",
+                data: values,
+                borderWidth: 2
+            }]
+        }
+    });
+}
+
+loadCO2();
+loadChart();
+
+// refresh live value every 5 seconds
+setInterval(loadCO2, 5000);
+</script>
+
+</body>
+</html>

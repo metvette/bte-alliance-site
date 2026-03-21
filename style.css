@@ -1,0 +1,353 @@
+/* ===================================================== */
+/* BTE ALLIANCE WEBSITE STYLESHEET */
+/* ----------------------------------------------------- */
+/* This file controls the visual layout and appearance   */
+/* of the website.                                       */
+/*                                                       */
+/* Design Goals:                                         */
+/* - Clean, readable, technical feel                     */
+/* - No aggressive styling or distractions               */
+/* - Easy to modify and extend                           */
+/* ===================================================== */
+
+
+/* ===================================================== */
+/* BASE PAGE SETTINGS */
+/* ===================================================== */
+
+body {
+    font-family: Arial, sans-serif;   /* simple, readable font */
+    margin: 0;                        /* remove browser default margins */
+    background: #020617;              /* dark background */
+    color: #e2e8f0;                   /* light text */
+}
+
+
+/* ===================================================== */
+/* HEADER (TOP OF PAGE) */
+/* ===================================================== */
+
+header {
+    text-align: center;               /* center all header content */
+    padding: 20px;
+    border-bottom: 1px solid #1e293b; /* subtle divider line */
+}
+
+/* Logo image */
+.logo {
+    width: 200px;                      /* adjust size if needed orig 80 */
+    display: block;
+    margin: 10px auto;                /* center horizontally */
+}
+
+/* Main title */
+header h1 {
+    margin: 5px 0;
+    font-weight: 500;                 /* not too bold */
+}
+
+/* Subtitle */
+header p {
+    margin: 0;
+    color: #94a3b8;                   /* softer gray */
+}
+
+
+/* ===================================================== */
+/* NAVIGATION LINKS */
+/* ===================================================== */
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;                   /* spacing between links */
+    text-decoration: none;            /* remove underline */
+    color: #22c55e;                   /* green accent */
+    font-weight: 500;
+}
+
+/* Hover effect (when mouse is over link) */
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===================================================== */
+/* GENERAL SECTION SETTINGS */
+/* ===================================================== */
+
+section {
+    padding: 60px 20px;               /* vertical spacing */
+    max-width: 900px;                 /* limit width for readability */
+    margin: auto;                     /* center section */
+}
+
+
+/* ===================================================== */
+/* HERO SECTION (TOP MESSAGE AREA) */
+/* ===================================================== */
+
+.hero {
+    display: flex;                    /* use flexbox for layout */
+    flex-direction: column;           /* stack items vertically */
+    align-items: center;              /* center horizontally */
+    text-align: center;               /* center text */
+}
+
+/* Main headline */
+.hero h2 {
+    font-size: 1.8em;                 /* moderate size */
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Supporting text */
+.hero p {
+    font-size: 1em;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* Button container (optional grouping) */
+.hero-buttons {
+    margin-top: 10px;
+}
+
+
+/* ===================================================== */
+/* BUTTON STYLE */
+/* ===================================================== */
+
+button {
+    padding: 10px 20px;
+    background: #22c55e;              /* green */
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Hover effect */
+button:hover {
+    background: #16a34a;
+}
+
+
+/* ===================================================== */
+/* DIAGRAM SECTION (YOUR INTERACTIVE GRAPHIC AREA) */
+/* ===================================================== */
+
+.diagram-section {
+    text-align: center;
+}
+
+/* Container holds image + clickable overlays */
+.diagram-container {
+    position: relative;               /* allows absolute positioning inside */
+    display: inline-block;
+}
+
+/* Diagram image */
+.diagram-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ===================================================== */
+/* AI / TWO TYPES OF TECHNOLOGY SECTION */
+/* ===================================================== */
+
+.ai-types {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;                  /* allows stacking on small screens */
+}
+
+/* Individual box */
+.ai-types div {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+}
+
+
+/* ===================================================== */
+/* CALL TO ACTION SECTION */
+/* ===================================================== */
+
+.cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta h2 {
+    font-weight: 500;
+}
+
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #1e293b;
+    color: #94a3b8;
+}
+/* ========================= */
+/* CLICKABLE ZONES OVER IMAGE */
+/* ========================= */
+
+/* Base zone (invisible clickable area) */
+.zone {
+    position: absolute;
+    cursor: pointer;
+}
+
+/* DEBUG MODE (turn ON to see zones while positioning) */
+
+.zone {
+   /* background: rgba(0, 255, 0, 0.25); */ 
+}
+
+/* ========================= */
+/* POSITION EACH ZONE */
+/* YOU CONTROL THESE VALUES */
+/* ========================= */
+
+/* Example placeholders — adjust these */
+
+.biology {
+    top: 50%; 
+    left: 60%;
+    width: 30%;
+    height: 40%;
+}
+
+.technology {
+    top: 5%;
+    left: 25%;
+    width: 50%;
+    height: 30%;
+}
+
+.earth {
+    top: 50%;
+    left: 10%;
+    width: 30%;
+    height: 40%;
+}
+
+/* Overlaps (you define these precisely later) */
+
+.bio-tech {
+    top: 30%;
+    left: 60%;
+    width: 20%;
+    height: 20%;
+}
+
+.tech-earth {
+    top: 30%;
+    left: 20%;
+    width: 20%;
+    height: 20%;
+}
+
+.bio-earth {
+    top: 63%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+
+.all-three {
+    top: 47%;
+    left: 44%;
+    width: 12%;
+    height: 15%;
+}
+
+/* ========================= */
+/* POPUP STYLING */
+/* ========================= */
+
+/* Background overlay */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hide popup */
+.hidden {
+   display: none; 
+}
+
+/* Popup content box */
+.popup-content {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    color: #e2e8f0;
+    border: 1px solid #22c55e;
+}
+.zone {
+    position: absolute;
+    z-index: 10;
+}
+
+.diagram-image {
+    pointer-events: none;
+}
+/* Enable this section to show boxes*/
+/*.zone {
+   background: rgba(0, 255, 0, 0.3);
+    z-index: 10; */
+}
+/* ========================= */
+/* TECHNOLOGY PAGE COLUMNS */
+/* ========================= */
+
+.tech-columns {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Each column */
+.column {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Headings */
+.column h3 {
+    color: #22c55e;
+}
+/* ========================= */
+/* DIAGRAM INSTRUCTION TEXT */
+/* ========================= */
+
+.diagram-instruction {
+    text-align: center;
+    font-size: 0.99em;
+    color: #94a3b8;       /* soft gray */
+    margin-bottom: 55px;
+}
