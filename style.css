@@ -351,3 +351,137 @@ footer {
     color: #94a3b8;       /* soft gray */
     margin-bottom: 55px;
 }
+/* ===================================================== */
+/* GLOBAL READABILITY IMPROVEMENTS */
+/* ===================================================== */
+
+/* Base font slightly larger */
+body {
+    font-size: 1.1em;
+}
+
+/* All paragraphs */
+p {
+    font-size: 1.15em;
+    line-height: 1.6;
+}
+
+/* Section headings */
+h2 {
+    font-size: 1.6em;
+}
+
+/* Sub headings */
+h3 {
+    font-size: 1.3em;
+}
+
+/* Lists */
+li {
+    font-size: 1.15em;
+    margin-bottom: 8px;
+}
+
+
+/* ===================================================== */
+/* NAVIGATION FIX */
+/* ===================================================== */
+
+nav a {
+    font-size: 1.3em;          /* bigger */
+    color: #ffffff;            /* white */
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #ffd700;            /* yellow hover */
+    text-decoration: none;
+}
+
+
+/* ===================================================== */
+/* GLOBAL LINK VISIBILITY */
+/* ===================================================== */
+
+a {
+    color: #ffd700;            /* yellow */
+}
+
+a:hover {
+    color: #ffffff;            /* white on hover */
+}
+
+
+/* ===================================================== */
+/* BUTTON IMPROVEMENTS */
+/* ===================================================== */
+
+button {
+    font-size: 1.3em;
+    padding: 14px 28px;
+    border-radius: 8px;
+}
+
+/* Specifically fix hero button */
+.hero-buttons button {
+    font-size: 1.5em;
+    padding: 18px 35px;
+}
+
+
+/* ===================================================== */
+/* HERO TEXT IMPROVEMENT */
+/* ===================================================== */
+
+.hero h2 {
+    font-size: 2.2em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+
+/* ===================================================== */
+/* DIAGRAM TEXT */
+/* ===================================================== */
+
+.diagram-instruction {
+    font-size: 1.2em;
+}
+
+
+/* ===================================================== */
+/* MOBILE OPTIMIZATION */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 1.2em;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.4em;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 90%;
+        font-size: 1.4em;
+        padding: 18px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
